@@ -41,6 +41,7 @@
     <div class="max-w-7xl mx-auto flex justify-between items-center px-6">
         <!-- Logo on the left with text -->
         <div class="flex items-center gap-4">
+
             <img src="./images/bel.png" alt="VirtuExec Logo" class="h-20 w-auto rounded-lg">
             <span class="text-4xl font-extrabold text-white">VirtuExec</span>
         </div>
@@ -61,15 +62,23 @@
   
     <!-- Hero Section -->
     <section class="text-center py-32 px-6 bg-gray-800 relative overflow-hidden">
-        <img src="./images/blue.jpg" alt="Background" class="absolute inset-0 w-full h-full object-cover opacity-40 z-0">
-        <div class="relative z-10">
-            <h1 class="text-6xl font-extrabold text-white">We Do The Work. You Get The Results.</h1>
-            <p class="text-xl text-gray-300 mt-4 max-w-3xl mx-auto leading-relaxed">
-                VirtuExec connects you with elite virtual assistants, customer success professionals, and technical experts to scale your business effortlessly.
-            </p>
-            <a href="https://calendly.com/your-calendly-link" target="_blank" class="mt-6 inline-block bg-blue-500 hover:bg-blue-400 text-white text-lg font-semibold py-4 px-8 rounded-xl transition transform hover:scale-110">Start Hiring</a>
-        </div>
-    </section>
+    <img src="./images/blue.jpg" alt="Background" class="absolute inset-0 w-full h-full object-cover opacity-40 z-0">
+    <div class="relative z-10">
+        <h1 class="text-6xl font-extrabold text-white">We Do The Work. You Get The Results.</h1>
+        <p class="text-xl text-gray-300 mt-4 max-w-3xl mx-auto leading-relaxed">
+            VirtuExec connects you with elite virtual assistants, customer success professionals, and technical experts to scale your business effortlessly.
+        </p>
+        <a href="https://calendly.com/your-calendly-link" target="_blank" class="mt-6 inline-block bg-blue-500 hover:bg-blue-400 text-white text-lg font-semibold py-4 px-8 rounded-xl transition transform hover:scale-110">Start Hiring</a>
+    </div>
+
+    <!-- SVG Wave Divider -->
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+        <svg viewBox="0 0 1200 100" preserveAspectRatio="none" class="w-full h-24">
+            <path d="M0,0 C300,100 900,0 1200,0 L1200,100 L0,100 Z" fill="#0F172A"></path>
+        </svg>
+    </div>
+</section>
+
 
     <!-- Empowering Businesses with Animated Numbers -->
     <section class="text-center py-20 px-6 bg-gray-900">
@@ -94,82 +103,216 @@
     </section>
 
 
-    <section class="max-w-2xl mx-auto p-8 bg-gray-900 text-white rounded-lg shadow-lg mt-10">
-    <h2 class="text-4xl font-bold mb-6 text-center">Contact Us</h2>
-    <p class="text-gray-400 text-center mb-8">We'd love to hear from you! Fill out the form below, and our team will get back to you as soon as possible.</p>
-    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
-        <input type="hidden" name="access_key" value="d2fb3a05-ac58-4b09-a617-00d70dbbbe9e">
+    <section class="max-w-5xl mx-auto flex flex-col md:flex-row items-center bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white rounded-lg shadow-lg p-10 mt-10">
+    
+    <!-- Contact Form (Left Side) -->
+    <div class="w-full md:w-1/2">
+        <h2 class="text-4xl font-bold mb-6">Contact Us</h2>
+        <p class="text-gray-400 mb-8">We'd love to hear from you! Fill out the form below, and our team will get back to you as soon as possible.</p>
         
-        <div>
-            <label class="block text-gray-300 mb-2">Your Name</label>
-            <input type="text" name="name" required class="w-full bg-gray-800 border border-gray-700 p-4 rounded-lg focus:ring-2 focus:ring-blue-500">
+        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+            <input type="hidden" name="access_key" value="d2fb3a05-ac58-4b09-a617-00d70dbbbe9e">
+            
+            <div>
+                <label class="block text-gray-300 mb-2">Your Name</label>
+                <input type="text" name="name" required class="w-full bg-gray-800 border border-gray-700 p-4 rounded-lg focus:ring-2 focus:ring-blue-500">
+            </div>
+            
+            <div>
+                <label class="block text-gray-300 mb-2">Your Email</label>
+                <input type="email" name="email" required class="w-full bg-gray-800 border border-gray-700 p-4 rounded-lg focus:ring-2 focus:ring-blue-500">
+            </div>
+            
+            <div>
+                <label class="block text-gray-300 mb-2">Your Message</label>
+                <textarea name="message" required class="w-full bg-gray-800 border border-gray-700 p-4 rounded-lg h-40 focus:ring-2 focus:ring-blue-500"></textarea>
+            </div>
+            
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            
+            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 p-4 rounded-lg text-white font-semibold text-xl transition transform hover:scale-105">
+                Send Message
+            </button>
+        </form>
+    </div>
+
+    <!-- Text/Branding Section (Right Side) -->
+    <div class="w-full md:w-1/2 md:pl-12 mt-10 md:mt-0">
+        <h3 class="text-3xl font-semibold">Let’s Work Together</h3>
+        <p class="text-gray-400 mt-4">At VirtuExec, we’re dedicated to providing elite virtual assistance and technical expertise. Get in touch today to see how we can help you scale efficiently.</p>
+        
+        <div class="mt-6">
+            <p class="text-gray-300"><strong>Email:</strong> contact@virtuexec.com</p>
+            <p class="text-gray-300"><strong>Phone:</strong> +1 (555) 123-4567</p>
         </div>
-        
-        <div>
-            <label class="block text-gray-300 mb-2">Your Email</label>
-            <input type="email" name="email" required class="w-full bg-gray-800 border border-gray-700 p-4 rounded-lg focus:ring-2 focus:ring-blue-500">
-        </div>
-        
-        <div>
-            <label class="block text-gray-300 mb-2">Your Message</label>
-            <textarea name="message" required class="w-full bg-gray-800 border border-gray-700 p-4 rounded-lg h-40 focus:ring-2 focus:ring-blue-500"></textarea>
-        </div>
-        
-        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-        
-        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 p-4 rounded-lg text-white font-semibold text-xl transition transform hover:scale-105">Send Message</button>
-    </form>
+    </div>
+
 </section>
 
 
 
-
-
-
-    <!-- Footer -->
-    <footer class="bg-black text-gray-400 py-12">
-        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 px-6">
-            <div>
-                <h3 class="text-white font-bold text-lg">Platform-Coming Soon</h3>
-                <ul class="mt-2 space-y-2">
-                    <li>VA Staffing</li>
-                    <li>Customer Support</li>
-                    <li>Administrative Assistance</li>
-                    <li>Book a Consultation</li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-white font-bold text-lg">Solutions</h3>
-                <ul class="mt-2 space-y-2">
-                    <li>Sales Support</li>
-                    <li>Marketing Assistance</li>
-                    <li>Executive Support</li>
-                    <li>Remote Operations</li>
-                </ul>
-            </div>
-
-            <div>
-                <h3 class="text-white font-bold text-lg">Why VirtuExec?</h3>
-                <ul class="mt-2 space-y-2">
-                    <li>Fast VA Matching</li>
-                    <li>Flexible Contracts</li>
-                    <li>Dedicated Success Team</li>
-                    <li>Client Testimonials</li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-white font-bold text-lg">Resources</h3>
-                <ul class="mt-2 space-y-2">
-                    <li>Blog</li>
-                    <li>Case Studies</li>
-                    <li>Support Documentation</li>
-                    <li>Careers</li>
-                </ul>
+<!-- Our Process: AI-Augmented Execution, Zero Waste -->
+<section class="text-center py-20 px-6 bg-gray-900 relative">
+    <!-- Background Parallax Effect -->
+    <div class="relative max-w-6xl mx-auto overflow-hidden rounded-3xl shadow-xl">
+        <div class="parallax h-[500px] rounded-3xl relative">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center animate-bg-move text-center px-6">
+                
+                <!-- Animated Changing Text -->
+                <h2 class="text-6xl font-extrabold text-white">
+                    The VirtuExec Way: <span id="changing-word" class="text-blue-400 transition-all duration-700 ease-in-out">AI-Augmented</span> , Zero Waste
+                </h2>
+                
+                <p class="text-lg text-gray-300 mt-4 max-w-3xl leading-relaxed">
+                    Legacy firms still hire like it’s 1999—throwing bodies at problems and calling it “scale.” We don’t play that game.
+                    VirtuExec deploys <span class="text-white font-bold">AI-Augmented Humans</span>—operators trained to wield automation, analytics, and machine learning like weapons.
+                    <br><br>
+                    Your time is your war chest. We protect it. Every assistant we deploy is optimized for high-speed execution, ensuring you move faster, scale smarter, and never drown in busywork again.
+                </p>
             </div>
         </div>
-        <div class="text-center border-t border-gray-700 mt-6 pt-4">
-            <p>&copy; 2024 VirtuExec. All rights reserved. | <a href="#" class="text-blue-500 hover:text-blue-400">Privacy Policy</a></p>
+    </div>
+</section>
+
+<!-- JavaScript for Smooth Transition Effect -->
+<script>
+    const words = ["AI-Powered", "Reliable", "Efficient", "Scalable", "Machine-Learning Enhanced"];
+    let index = 0;
+    const element = document.getElementById("changing-word");
+    
+    function changeWord() {
+        element.style.opacity = 0;
+        element.style.transform = "translateY(-10px)";
+        setTimeout(() => {
+            element.textContent = words[index];
+            element.style.opacity = 1;
+            element.style.transform = "translateY(0)";
+            index = (index + 1) % words.length;
+        }, 500);
+    }
+    
+    setInterval(changeWord, 2000);
+</script>
+
+
+
+    <!-- Steps Section -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mt-12 text-center">
+        <div class="p-6 bg-gray-800 rounded-xl shadow-lg transition transform hover:scale-105">
+            <h3 class="text-3xl font-bold text-blue-500"> The Call</h3>
+            <p class="text-gray-300 mt-2">15 minutes. No fluff. We extract what you need, align on outcomes, and map your growth plan.</p>
         </div>
-    </footer>
+
+        <div class="p-6 bg-gray-800 rounded-xl shadow-lg transition transform hover:scale-105">
+            <h3 class="text-3xl font-bold text-blue-500"> Lock & Load</h3>
+            <p class="text-gray-300 mt-2">You send us access and credentials. We handle everything else. No middlemen, no hand-holding.</p>
+        </div>
+
+        <div class="p-6 bg-gray-800 rounded-xl shadow-lg transition transform hover:scale-105">
+            <h3 class="text-3xl font-bold text-blue-500"> Rapid Deployment</h3>
+            <p class="text-gray-300 mt-2">Your VirtuExec Operator is trained to hunt value from day one. No learning curves, just immediate execution.</p>
+        </div>
+
+        <div class="p-6 bg-gray-800 rounded-xl shadow-lg transition transform hover:scale-105">
+            <h3 class="text-3xl font-bold text-blue-500"> Profit Mode</h3>
+            <p class="text-gray-300 mt-2">We scale results fast. Expect revenue impact, efficiency gains, and a process so smooth you’ll forget we’re remote.</p>
+        </div>
+    </div>
+
+    <div class="mt-12">
+        <a href="https://calendly.com/your-calendly-link" target="_blank" class="inline-block bg-blue-500 hover:bg-blue-400 text-white text-lg font-semibold py-4 px-8 rounded-xl transition transform hover:scale-110">
+            Book a Strategy Call
+        </a>
+    </div>
+</section>
+
+<style>
+  .parallax {
+    background-image: url('./images/bella.jpeg'); /* Ensure this is the correct path */
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @keyframes bgMove {
+      0% { background-position: center 0px; }
+      50% { background-position: center 50px; }
+      100% { background-position: center 0px; }
+  }
+
+  .animate-bg-move {
+      animation: bgMove 10s infinite alternate linear;
+  }
+</style>
+
+
+   <!-- Footer -->
+<footer class="bg-black text-gray-400 py-12">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 px-6">
+        <div>
+            <h3 class="text-white font-bold text-lg">Platform</h3>
+            <ul class="mt-2 space-y-2">
+                <li>VA Staffing</li>
+                <li>Customer Support</li>
+                <li>Administrative Assistance</li>
+                <li>Book a Consultation</li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-white font-bold text-lg">Solutions</h3>
+            <ul class="mt-2 space-y-2">
+                <li>Sales Support</li>
+                <li>Marketing Assistance</li>
+                <li>Executive Support</li>
+                <li>Remote Operations</li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-white font-bold text-lg">Why VirtuExec?</h3>
+            <ul class="mt-2 space-y-2">
+                <li>Fast VA Matching</li>
+                <li>Flexible Contracts</li>
+                <li>Dedicated Success Team</li>
+                <li>Client Testimonials</li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="text-white font-bold text-lg">Resources</h3>
+            <ul class="mt-2 space-y-2">
+                <li>Blog</li>
+                <li>Case Studies</li>
+                <li>Support Documentation</li>
+                <li>Careers</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Global Operations Section -->
+    <div class="mt-10 text-center">
+        <h3 class="text-white font-bold text-lg">Global Operations</h3>
+        <p class="text-gray-400 mt-2">
+            We operate across major business hubs to support clients worldwide.
+        </p>
+        <div class="flex flex-wrap justify-center mt-4 space-x-6 text-sm">
+            <span class="text-gray-300">📍 Dublin HQ</span>
+            <span class="text-gray-300">📍 London</span>
+            <span class="text-gray-300">📍 New York</span>
+            <span class="text-gray-300">📍 Singapore</span>
+            <span class="text-gray-300">📍 Dubai</span>
+            <span class="text-gray-300">📍 Manila</span>
+            <span class="text-gray-300">📍 Hong Kong</span>
+        </div>
+    </div>
+
+    <!-- Copyright Section -->
+    <div class="text-center border-t border-gray-700 mt-6 pt-4">
+        <p>&copy; 2024 VirtuExec. All rights reserved. | 
+            <a href="#" class="text-blue-500 hover:text-blue-400">Privacy Policy</a>
+        </p>
+    </div>
+</footer>
+
 </body>
 </html>
