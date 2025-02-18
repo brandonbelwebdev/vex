@@ -152,6 +152,7 @@
 
 
 <!-- Our Process: AI-Augmented Execution, Zero Waste -->
+<!-- Our Process: AI-Augmented Execution, Zero Waste -->
 <section class="text-center py-20 px-6 bg-gray-900 relative">
     <!-- Background Parallax Effect -->
     <div class="relative max-w-6xl mx-auto overflow-hidden rounded-3xl shadow-xl">
@@ -160,7 +161,7 @@
                 
                 <!-- Animated Changing Text -->
                 <h2 class="text-6xl font-extrabold text-white">
-                    The VirtuExec Way: <span id="changing-word" class="text-blue-400 transition-all duration-700 ease-in-out">AI-Augmented</span> , Zero Waste
+                    The VirtuExec Way: <span id="changing-word" class="text-blue-400 changing-text">AI-Augmented</span>
                 </h2>
                 
                 <p class="text-lg text-gray-300 mt-4 max-w-3xl leading-relaxed">
@@ -174,25 +175,37 @@
     </div>
 </section>
 
-<!-- JavaScript for Smooth Transition Effect -->
+<!-- CSS for Smooth Transition Effect -->
+<style>
+    .changing-text {
+        display: inline-block;
+        transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    }
+    
+    @keyframes fadeInOut {
+        0% { opacity: 0; transform: translateY(10px); }
+        50% { opacity: 1; transform: translateY(0px); }
+        100% { opacity: 0; transform: translateY(-10px); }
+    }
+</style>
+
+<!-- JavaScript for Smooth Word Transition -->
 <script>
-    const words = ["AI-Powered", "Reliable", "Efficient", "Scalable", "Machine-Learning Enhanced"];
+    const words = ["AI-Powered", "Reliable", "Efficient", "Scalable"];
     let index = 0;
     const element = document.getElementById("changing-word");
     
     function changeWord() {
-        element.style.opacity = 0;
-        element.style.transform = "translateY(-10px)";
+        element.style.animation = "fadeInOut 1.6s ease-in-out";
         setTimeout(() => {
             element.textContent = words[index];
-            element.style.opacity = 1;
-            element.style.transform = "translateY(0)";
             index = (index + 1) % words.length;
-        }, 500);
+        }, 800);
     }
     
     setInterval(changeWord, 2000);
 </script>
+
 
 
 
