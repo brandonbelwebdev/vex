@@ -71,6 +71,52 @@
     </div>
   </section>
 
+
+
+<section class="bg-gray-950 text-white py-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold mb-4 text-center">📈 Live Market Watch</h2>
+    <p class="text-center text-gray-400 mb-6">
+      A pulse on key global assets and Asian markets I follow — updated in real-time.
+    </p>
+    
+    <!-- Ticker Widget -->
+    <div class="rounded-xl overflow-hidden border border-gray-700 shadow-md">
+      <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+        {
+          "symbols": [
+            { "proName": "FX_IDC:USDCNY", "title": "USD/CNY" },
+            { "proName": "TVC:SHCOMP", "title": "Shanghai Comp" },
+            { "proName": "FOREXCOM:USDJPY", "title": "USD/JPY" },
+            { "proName": "BINANCE:BTCUSDT", "title": "Bitcoin/USDT" },
+            { "proName": "NASDAQ:AAPL", "title": "Apple" },
+            { "proName": "TVC:USOIL", "title": "Crude Oil" }
+          ],
+          "colorTheme": "dark",
+          "isTransparent": false,
+          "displayMode": "adaptive",
+          "locale": "en"
+        }
+        </script>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <!-- TradingView Advanced Chart -->
   <section class="max-w-7xl mx-auto py-12 px-4">
     <h2 class="text-3xl font-bold mb-6">Interactive Market Chart</h2>
@@ -92,7 +138,7 @@
     </div>
   </section>
 
-  
+
 
   <!-- Footer -->
 <footer class="bg-gradient-to-br from-gray-900 to-black text-gray-400 py-12">
