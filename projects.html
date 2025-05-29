@@ -35,6 +35,33 @@
     </div>
   </header>
 
+   <div class="md:hidden fixed top-4 right-4 z-50">
+    <button id="menu-toggle" class="text-white text-3xl focus:outline-none">☰</button>
+  </div>
+
+  <div id="mobile-menu"
+       class="md:hidden fixed top-16 right-4 bg-gray-800 rounded-xl shadow-lg w-64 py-4 px-6 space-y-4 transition-all duration-300 transform scale-95 opacity-0 pointer-events-none z-50">
+    <a href="index.html" class="block text-white text-lg font-medium hover:text-blue-400 transition">Home</a>
+    <a href="projects.html" class="block text-white text-lg font-medium hover:text-blue-400 transition">Markets</a>
+    <a href="get_started.html" class="block text-white text-lg font-medium bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md transition">Get in Touch Today</a>
+  </div>
+
+  <script>
+    const toggleButton = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    toggleButton.addEventListener("click", () => {
+      const isHidden = mobileMenu.classList.contains("opacity-0");
+      if (isHidden) {
+        mobileMenu.classList.remove("opacity-0", "pointer-events-none", "scale-95");
+        mobileMenu.classList.add("opacity-100", "pointer-events-auto", "scale-100");
+      } else {
+        mobileMenu.classList.add("opacity-0", "pointer-events-none", "scale-95");
+        mobileMenu.classList.remove("opacity-100", "pointer-events-auto", "scale-100");
+      }
+    });
+  </script>
+
   <!-- Hero Section -->
   <section class="text-center py-24 px-6 bg-gray-800 relative overflow-hidden">
     <img src="./images/blue.jpeg" alt="Background" class="absolute inset-0 w-full h-full object-cover opacity-40 z-0">
