@@ -1,240 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brandon Costello</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-   
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-    </style>
-</head>
-<body class="bg-gray-950 text-white">
-    <header class="bg-gradient-to-r from-gray-900 to-gray-800 py-4 shadow-lg sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto flex justify-between items-center px-6">
-            <!-- Logo Section -->
-            <div class="flex items-center gap-4">
-                <img src="./images/bel.png" alt="VirtuExec Logo" class="h-16 w-auto rounded-lg">
-                <span class="text-4xl font-extrabold text-white neon-text"></span>
-            </div>
-            
-            <!-- Navigation -->
-            <nav class="hidden md:flex items-center gap-6">
-                <a href="index.html" class="text-white text-lg font-medium hover:text-gray-300 transition-all duration-200">Home</a>
-                <a href="projects.html" class="text-white text-lg font-medium hover:text-gray-300 transition-all duration-200">Markets</a>
-                <a href="get_started.html" class="text-white text-lg font-medium bg-[#0047AB] px-4 py-2 rounded-md hover:bg-[#003b8b] transition-all duration-300">
-                    Get in Touch Today
-                </a>
-            </nav>
-        </div>
-    </header>
-
-    <style>
-        .neon-text {
-            font-family: 'Inter', sans-serif;
-            letter-spacing: 0.5px;
-            text-transform: lowercase;
-            font-weight: 800;
-            color: #ffffff;
-            text-shadow: 0 0 8px rgba(0, 209, 255, 0.8), 0 0 16px rgba(0, 209, 255, 0.5);
-        }
-    </style>
-
-    <!-- Mobile Menu Button -->
-    <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none px-6 py-2">
-        ☰
-    </button>
-
-    <!-- Mobile Menu (Dropdown Placeholder) -->
-    <div id="mobile-menu" class="md:hidden hidden px-6">
-        <a href="index.html" class="block py-2 text-white hover:text-gray-300">Home</a>
-        <a href="projects.html" class="block py-2 text-white hover:text-gray-300">Markets</a>
-        <a href="get_started.html" class="block py-2 text-white hover:text-gray-300">Get in Touch Today</a>
-    </div>
-
-    <script>
-        // Mobile Menu Toggle Function
-        document.getElementById("menu-toggle").addEventListener("click", function() {
-            document.getElementById("mobile-menu").classList.toggle("hidden");
-        });
-    </script>
-
-
-</body>
-
-
-
-
-
-  
-    <!-- Hero Section -->
-    <section class="text-center py-32 px-6 bg-gray-800 relative overflow-hidden">
-    <img src="./images/blue.jpeg" alt="Background" class="absolute inset-0 w-full h-full object-cover opacity-40 z-0">
-    <div class="relative z-10">
-        <h1 class="text-6xl font-extrabold text-white">Welcome Aboard!</h1>
-        <p class="text-xl text-gray-300 mt-4 max-w-3xl mx-auto leading-relaxed">
-           Hi i'm Brandon, Welcome to my personal website, for engagements please send me an email or fill out the form below
-        </p>
-       
-    </div>
-
-    <!-- SVG Wave Divider -->
-    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-        <svg viewBox="0 0 1200 100" preserveAspectRatio="none" class="w-full h-24">
-            <path d="M0,0 C300,100 900,0 1200,0 L1200,100 L0,100 Z" fill="#0F172A"></path>
-        </svg>
-    </div>
-
-
-<
-
-
-
-
-<!-- Contact Form (Left Side) -->
-<div class="w-full md:w-1/2 relative bg-cover bg-center rounded-2xl overflow-hidden mb-16 bg-gray-900">
-  <div class="bg-black bg-opacity-50 p-8 rounded-2xl">
-    <h2 class="text-4xl font-bold mb-6 text-white">Contact Me</h2>
-    <p class="text-gray-300 mb-8">Fill out the form below and I’ll personally get back to you.</p>
-
-    <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
-      <input type="hidden" name="access_key" value="bfd47137-fa17-4c07-808c-a996c3460394">
-
-      <div>
-        <label class="block text-gray-300 mb-2">Your Name</label>
-        <input type="text" name="name" required
-          class="w-full bg-gray-800 border border-gray-700 p-4 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
-      </div>
-
-      <div>
-        <label class="block text-gray-300 mb-2">Your Email</label>
-        <input type="email" name="email" required
-          class="w-full bg-gray-800 border border-gray-700 p-4 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
-      </div>
-
-      <div>
-        <label class="block text-gray-300 mb-2">Your Message</label>
-        <textarea name="message" required
-          class="w-full bg-gray-800 border border-gray-700 p-4 rounded-lg h-40 focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
-      </div>
-
-      <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-      <button type="submit"
-        class="w-full bg-blue-600 hover:bg-blue-700 p-4 rounded-lg text-white font-semibold text-xl transition duration-300 transform hover:scale-105 shadow-md">
-        Send Message
-      </button>
-    </form>
-  </div>
-</div>
-
-
-
-
-
-
-    <!-- Text/Branding Section (Right Side) -->
-    <div class="w-full md:w-1/2 md:pl-12 mt-10 md:mt-0">
-        <h3 class="text-3xl font-semibold">Let’s Work Together</h3>
-        <p class="text-gray-400 mt-4"> Get in touch today to see how i can help you scale efficiently.</p>
-      
-
-</section>
-
-
-
-
-<!-- Our Process: AI-Augmented Execution, Zero Waste -->
-<!-- Our Process: AI-Augmented Execution, Zero Waste -->
-<section class="text-center py-20 px-6 bg-gray-900 relative mt-16">
-    <!-- Background Parallax Effect -->
-    <div class="relative max-w-6xl mx-auto overflow-hidden rounded-3xl shadow-xl">
-        <div class="parallax h-[500px] rounded-3xl relative">
-            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center animate-bg-move text-center px-6">
-                
-                <!-- Animated Changing Text -->
-                <h2 class="text-6xl font-extrabold text-white">
-                    <span id="changing-word" class="text-blue-400 changing-text"></span>
-                </h2>
-                
-                <p class="text-lg text-gray-300 mt-4 max-w-3xl leading-relaxed">
-                    Brandon is a skilled professional with a solid academic foundation and a global perspective on business and economics.
-
-He holds an undergraduate degree in Business from University College Dublin (UCD), where he developed a deep understanding of business strategy and management. Building on this, Brandon completed a Postgraduate Diploma in Applied Economics and Big Data at Trinity College Dublin, where he sharpened his analytical skills and gained expertise in areas such as data analysis, econometrics, and statistical modeling.
-
-In addition to his academic achievements, Brandon has gained valuable experience working in the tech industry and has lived and worked in Australia, where he expanded his global business insight and practical knowledge. His diverse experience has equipped him with a strategic mindset and the ability to navigate complex business landscapes across different markets. <span 
-                    <br><br>
-                    
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- CSS for Smooth Transition Effect -->
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title></title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .neon-text {
+      text-shadow: 0 0 8px rgba(0, 209, 255, 0.8), 0 0 16px rgba(0, 209, 255, 0.5);
+    }
     .changing-text {
-        display: inline-block;
-        transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+      display: inline-block;
+      transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
     }
-    
     @keyframes fadeInOut {
-        0% { opacity: 0; transform: translateY(10px); }
-        50% { opacity: 1; transform: translateY(0px); }
-        100% { opacity: 0; transform: translateY(-10px); }
+      0% { opacity: 0; transform: translateY(10px); }
+      50% { opacity: 1; transform: translateY(0px); }
+      100% { opacity: 0; transform: translateY(-10px); }
     }
-</style>
-
-
-
-
-
-
-
-
-<style>
-  .parallax {
-    background-image: url('./images/dublin2.jpeg'); /* Ensure this is the correct path */
-    height: 500px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  @keyframes bgMove {
+    .parallax {
+      background-image: url('./images/dublin2.jpeg');
+      height: 500px;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    @keyframes bgMove {
       0% { background-position: center 0px; }
       50% { background-position: center 50px; }
       100% { background-position: center 0px; }
-  }
-
-  .animate-bg-move {
+    }
+    .animate-bg-move {
       animation: bgMove 10s infinite alternate linear;
-  }
-</style>
+    }
+  </style>
+</head>
 
+<body class="bg-gray-950 text-white">
 
-
-
-
-
-
-
-
-
-   <!-- Footer -->
-<footer class="bg-black text-gray-400 py-12">
-    
-    <div class="text-center border-t border-gray-700 mt-6 pt-4">
-        <p>&copy; 2025, Built by Brandon Costello, All rights reserved.
-            <a href="#" class="text-blue-500 hover:text-blue-400">Privacy Policy</a>
-        </p>
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-gray-900 to-gray-800 py-4 shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6">
+      <div class="flex items-center gap-4">
+        <img src="./images/bel.png" alt="VirtuExec Logo" class="h-16 w-auto rounded-lg">
+        <span class="text-4xl font-extrabold text-white neon-text"</span>
+      </div>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="index.html" class="text-white text-lg font-medium hover:text-gray-300 transition">Home</a>
+        <a href="projects.html" class="text-white text-lg font-medium hover:text-gray-300 transition">Markets</a>
+        <a href="get_started.html" class="text-white text-lg font-medium bg-[#0047AB] px-4 py-2 rounded-md hover:bg-[#003b8b] transition">Get in Touch Today</a>
+      </nav>
     </div>
-</footer>
+  </header>
+
+  <!-- Mobile Menu -->
+  <button id="menu-toggle" class="md:hidden text-white text-3xl px-6 py-2">☰</button>
+  <div id="mobile-menu" class="md:hidden hidden px-6">
+    <a href="index.html" class="block py-2 text-white hover:text-gray-300">Home</a>
+    <a href="projects.html" class="block py-2 text-white hover:text-gray-300">Markets</a>
+    <a href="get_started.html" class="block py-2 text-white hover:text-gray-300">Get in Touch Today</a>
+  </div>
+
+  <script>
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+      document.getElementById("mobile-menu").classList.toggle("hidden");
+    });
+  </script>
+
+  <!-- Hero Section -->
+  <section class="text-center py-32 px-6 bg-gray-800 relative overflow-hidden">
+    <img src="./images/blue.jpeg" alt="Background" class="absolute inset-0 w-full h-full object-cover opacity-40 z-0">
+    <div class="relative z-10">
+      <h1 class="text-6xl font-extrabold text-white">Welcome Aboard!</h1>
+      <p class="text-xl text-gray-300 mt-4 max-w-3xl mx-auto leading-relaxed">
+        Hi I'm Brandon. Welcome to my personal website. For engagements, please send me an email or fill out the form below.
+      </p>
+    </div>
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+      <svg viewBox="0 0 1200 100" preserveAspectRatio="none" class="w-full h-24">
+        <path d="M0,0 C300,100 900,0 1200,0 L1200,100 L0,100 Z" fill="#0F172A"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Contact + QR Section -->
+  <section class="w-full flex flex-col lg:flex-row justify-center items-center gap-10 px-6 py-20 bg-gray-950 text-center">
+    
+    <!-- Contact Form -->
+    <div class="w-full lg:w-1/2 max-w-xl bg-gray-900 rounded-2xl overflow-hidden shadow-lg">
+      <div class="bg-black bg-opacity-50 p-8 rounded-2xl">
+        <h2 class="text-4xl font-bold mb-6 text-white">Contact Me</h2>
+        <p class="text-gray-300 mb-8">Fill out the form below and I’ll personally get back to you.</p>
+        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+          <input type="hidden" name="access_key" value="bfd47137-fa17-4c07-808c-a996c3460394">
+
+          <div>
+            <label class="block text-gray-300 mb-2">Your Name</label>
+            <input type="text" name="name" required
+              class="w-full bg-gray-800 border border-gray-700 p-4 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+
+          <div>
+            <label class="block text-gray-300 mb-2">Your Email</label>
+            <input type="email" name="email" required
+              class="w-full bg-gray-800 border border-gray-700 p-4 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+          </div>
+
+          <div>
+            <label class="block text-gray-300 mb-2">Your Message</label>
+            <textarea name="message" required
+              class="w-full bg-gray-800 border border-gray-700 p-4 rounded-lg h-40 focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
+          </div>
+
+          <input type="checkbox" name="botcheck" class="hidden">
+          <button type="submit"
+            class="w-full bg-blue-600 hover:bg-blue-700 p-4 rounded-lg text-white font-semibold text-xl transition duration-300 transform hover:scale-105 shadow-md">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- QR Code Block -->
+    <div class="w-full lg:w-1/3 max-w-sm bg-gray-900 rounded-2xl p-8 shadow-lg text-center border border-gray-700">
+      <h2 class="text-3xl font-bold text-white mb-4">Scan to Watch My Video</h2>
+      <p class="text-gray-300 mb-6">
+        Learn more about my teaching approach and what I bring to the table. Scan the code below or open it directly.
+      </p>
+      <img src="./images/Teaching.jpeg" alt="Scan QR Code"
+        class="w-48 h-48 mx-auto rounded-lg border-4 border-blue-600 shadow-md hover:scale-105 transition-transform duration-300">
+      <p class="text-sm text-gray-500 mt-4">
+        <a href="./images/Teaching.jpeg" class="text-blue-400 underline hover:text-blue-300">Click here to open in a new tab</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Profile Section -->
+  <section class="text-center py-20 px-6 bg-gray-900 relative mt-16">
+    <div class="relative max-w-6xl mx-auto overflow-hidden rounded-3xl shadow-xl">
+      <div class="parallax h-[500px] rounded-3xl relative">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center animate-bg-move text-center px-6">
+          <h2 class="text-6xl font-extrabold text-white">
+            <span id="changing-word" class="text-blue-400 changing-text">Global Perspective. Local Edge.</span>
+          </h2>
+          <p class="text-lg text-gray-300 mt-4 max-w-3xl leading-relaxed">
+            Brandon is a skilled professional with a solid academic foundation and a global perspective on business and economics. He holds a business degree from UCD and a postgraduate diploma in Applied Economics & Big Data from Trinity College Dublin. His tech industry experience and time in Australia give him sharp commercial instincts, adaptability, and real-world firepower.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-gray-400 py-12">
+    <div class="text-center border-t border-gray-700 mt-6 pt-4">
+      <p>&copy; 2025, Built by Brandon Costello, All rights reserved.
+        <a href="#" class="text-blue-500 hover:text-blue-400">Privacy Policy</a>
+      </p>
+    </div>
+  </footer>
 
 </body>
 </html>
