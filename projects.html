@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Brandon Costello</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+    body { font-family: 'Poppins', sans-serif; }
+    .neon-text {
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.5px;
+      text-transform: lowercase;
+      font-weight: 800;
+      color: #ffffff;
+      text-shadow: 0 0 8px rgba(0, 209, 255, 0.8), 0 0 16px rgba(0, 209, 255, 0.5);
+    }
+  </style>
+</head>
+<body class="bg-gray-950 text-white">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-gray-900 to-gray-800 py-4 shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6">
+      <div class="flex items-center gap-4">
+        <img src="./images/bel.png" alt="VirtuExec Logo" class="h-16 w-auto rounded-lg">
+        <span class="text-4xl font-extrabold text-white neon-text"></span>
+      </div>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="index.html" class="text-white text-lg font-medium hover:text-gray-300">Home</a>
+        <a href="projects.html" class="text-white text-lg font-medium hover:text-gray-300">Markets</a>
+        <a href="get_started.html" class="text-white text-lg font-medium bg-blue-700 px-4 py-2 rounded-md hover:bg-blue-600 transition">Get in Touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="text-center py-24 px-6 bg-gray-800 relative overflow-hidden">
+    <img src="./images/blue.jpeg" alt="Background" class="absolute inset-0 w-full h-full object-cover opacity-40 z-0">
+    <div class="relative z-10">
+      <h1 class="text-6xl font-extrabold text-white">Live Markets & Projects</h1>
+      <p class="text-xl text-gray-300 mt-4 max-w-3xl mx-auto">Real-time data and macro dashboards built for high-level insight and execution.</p>
+    </div>
+  </section>
+
+  <!-- TradingView Advanced Chart -->
+  <section class="max-w-7xl mx-auto py-12 px-4">
+    <h2 class="text-3xl font-bold mb-6">Interactive Market Chart</h2>
+    <div class="w-full h-[600px]">
+      <iframe class="w-full h-full" src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_ece28&symbol=NASDAQ%3AAAPL&interval=D&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=[]&theme=dark&style=1&timezone=Etc%2FUTC&withdateranges=1&hideideas=1&studies_overrides={}&overrides={}&enabled_features=[]&disabled_features=[]&locale=en&utm_source=localhost&utm_medium=widget&utm_campaign=chart&utm_term=NASDAQ%3AAAPL" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
+    </div>
+  </section>
+
+  <!-- Macro Charts Section -->
+  <section class="max-w-7xl mx-auto py-12 px-4">
+    <h2 class="text-3xl font-bold mb-6">Macro Economic Indicators</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="w-full h-[400px]">
+        <iframe class="w-full h-full" src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en#%7B%22symbol%22%3A%22ECONOMICS%3AGDP%22%2C%22interval%22%3A%22M%22%2C%22timezone%22%3A%22Etc%2FUTC%22%2C%22theme%22%3A%22dark%22%2C%22style%22%3A%221%22%2C%22withdateranges%22%3Atrue%2C%22hide_side_toolbar%22%3Afalse%2C%22allow_symbol_change%22%3Atrue%2C%22details%22%3Atrue%7D" frameborder="0"></iframe>
+      </div>
+      <div class="w-full h-[400px]">
+        <iframe class="w-full h-full" src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en#%7B%22symbol%22%3A%22ECONOMICS%3AUSINTR%22%2C%22interval%22%3A%22M%22%2C%22timezone%22%3A%22Etc%2FUTC%22%2C%22theme%22%3A%22dark%22%2C%22style%22%3A%221%22%2C%22withdateranges%22%3Atrue%2C%22hide_side_toolbar%22%3Afalse%2C%22allow_symbol_change%22%3Atrue%2C%22details%22%3Atrue%7D" frameborder="0"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Finviz Heatmap Section -->
+  <section class="max-w-7xl mx-auto py-12 px-4">
+    <h2 class="text-3xl font-bold mb-6">Equity Market Heatmap</h2>
+    <p class="text-lg text-gray-300 mb-4">Snapshot of U.S. sector performance. Click to explore live data on Finviz.</p>
+    <a href="https://finviz.com/map.ashx" target="_blank" class="block">
+      <img src="https://finviz.com/published_map.ashx" alt="Finviz Heatmap" class="w-full rounded-lg shadow-lg border border-gray-700">
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-gray-400 py-12 text-center border-t border-gray-700">
+    <p>&copy; 2025 Brandon Costello | All rights reserved. <a href="#" class="text-blue-500 hover:text-blue-400">Privacy Policy</a></p>
+  </footer>
+
+</body>
+</html>
+
