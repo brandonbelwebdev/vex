@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ESL Job Board</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-950 text-white">
+
+  <section class="py-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-extrabold mb-6 text-center">🌍 ESL Job Board</h1>
+      <p class="text-gray-400 mb-10 text-center">
+        Z-Visa ready roles, pulled live from Airtable. No fluff. Just legit offers.
+      </p>
+
+      <div class="space-y-1 border border-gray-800 rounded-xl divide-y divide-gray-800" id="job-listings">
+        <div class="text-gray-400 text-sm text-center py-10">Loading jobs...</div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const apiKey = 'patl2ZhzFxtJXk1Vo.20f7a3157194d499aa433a3d8a53158ef28f0113049479f7042ee8ffeec4bde9';
+    const baseId = 'appfWEuwPO7ljMM7k';
+    const tableName = 'Jobs';
+
+    fetch(`https://api.airtable.com/v0/${baseId}/${encodeURIComponent(tableName)}`, {
+      headers: {
+        Authorization: `Bearer ${apiKey}`
+      }
+    })
+    .then(res => res.json())
+    .then(data => {
+      const container = document.getElementById("job-listings");
+      container.innerHTML = ''; // Clear loading message
+
+      data.records.forEach(record => {
+        const title = record.fields["Job Title"] || "Untitled";
+        const location = record.fields["Location"] || "Anywhere";
+        const jobType = record.fields["Job Type"] || "Unspecified";
+        const employer = record.fields["Employer Name"] || "Unknown School";
+
+        const row = document.createElement("div");
+        row.className = "hover:bg-gray-800 transition px-4 py-5 cursor-pointer";
+        row.innerHTML = `
+          <div class="flex justify-between items-center">
+            <div>
+              <h3 class="text-lg font-semibold text-white">${title}</h3>
+              <p class="text-sm text-gray-400">${location} · ${jobType} · ${employer}</p>
+            </div>
+            <div class="text-sm text-blue-400 hover:underline">View</div>
+          </div>
+        `;
+
+        container.appendChild(row);
+      });
+    })
+    .catch(err => {
+      console.error("❌ Error fetching Airtable data:", err);
+      document.getElementById("job-listings").innerHTML = `
+        <p class="text-red-500 text-center py-10">Error loading job listings. Please check your API key or table name.</p>
+      `;
+    });
+  </script>
+
+</body>
+</html>
+
