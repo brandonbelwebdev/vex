@@ -1,19 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Brandon Costello | Personal Site</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9W3E3TR8ML"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-9W3E3TR8ML');
-</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Link to External CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9W3E3TR8ML"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9W3E3TR8ML');
+  </script>
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
@@ -50,6 +52,7 @@
     }
   </style>
 </head>
+
 
 <body class="bg-gray-950 text-white">
 
@@ -332,37 +335,84 @@ cdn.min.js is the minified version — optimized, faster to load.-->
 
 </section>
 
-<section class="bg-[#101827] text-white py-20 px-6" id="brandonbot">
-  <div class="max-w-3xl mx-auto">
-    <!-- Title & Floating Icon -->
-    <div class="flex flex-col items-center mb-10 relative group">
-      <img src="./images/AI.png" alt="BrandonBot Logo"
-        class="w-16 h-16 mb-4 transform transition-transform duration-500 group-hover:-translate-y-2 group-hover:scale-110" />
-      <h2 class="text-4xl font-extrabold text-center">
-        <span class="text-blue-500">BrandonBot</span><br />
-        <span class="text-gray-300 text-lg font-medium">Ask about visas, relocation, and more</span>
-      </h2>
-    </div>
 
-    <!-- Chat Box -->
-    <div class="bg-[#1e293b] border border-gray-700 rounded-2xl p-6 shadow-2xl">
-      <div id="chatWindow"
-        class="h-96 overflow-y-auto space-y-4 mb-4 p-4 bg-gray-800 rounded-lg scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-gray-900">
-      </div>
-
-      <form id="brandonForm" class="flex items-center gap-4">
-        <input type="text" id="userInput" placeholder="Ask BrandonBot anything..."
-          class="flex-1 px-4 py-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition"
-          required />
-        <button type="submit"
-          class="bg-blue-600 hover:bg-blue-700 transition px-6 py-3 rounded-lg font-semibold shadow-md">
-          Send
-        </button>
-      </form>
-    </div>
+<!-- Main Container -->
+<!-- Header -->
+<div class="flex flex-col items-center gap-4 mb-10">
+  <div class="flex items-center justify-center gap-4">
+    <h1 class="text-4xl font-extrabold text-white tracking-tight">Recruiter</h1>
+    <img src="./images/AI.png" alt="AI Icon" class="w-20 h-20 rounded-full shadow-xl" />
   </div>
-</section>
+  <p class="text-center text-lg text-gray-300 max-w-xl leading-relaxed">
+    Meet your AI assistant. Ask anything about <span class="text-white font-semibold">visa requirements, job roles, relocation</span>,
+    or how to land a position abroad — it’s built to help you make smarter global moves.
+  </p>
+</div>
 
+<!-- Chat Window -->
+<div id="chatWindow"
+     class="w-full max-w-2xl mt-6 space-y-3 max-h-[70vh] overflow-y-auto
+            bg-[#1a2332] p-6 rounded-xl shadow-inner text-base md:text-lg mx-auto">
+</div>
+
+<!-- Search/Form Container -->
+<form id="brandonForm"
+      class="w-full max-w-2xl mt-4 relative flex gap-4 mx-auto">
+  <div class="flex-1 bg-[#1a2332] rounded-2xl shadow-xl p-4 flex items-center gap-3">
+    <!-- Input Field -->
+    <input
+      id="userInput"
+      name="text"
+      type="text"
+      placeholder="Ask me anything..."
+      class="input flex-1 bg-transparent border-none outline-none text-white placeholder-gray-400 text-base md:text-lg"
+    />
+
+    <!-- Send Button -->
+    <button type="submit" id="sendBtn" class="hover:scale-110 transition">
+      <svg xmlns="http://www.w3.org/2000/svg" class="text-white" width="28" height="28"
+           viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="22" y1="2" x2="11" y2="13"></line>
+        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+      </svg>
+    </button>
+  </div>
+</form>
+
+
+
+<!-- Loader -->
+<style>
+  .loader {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: radial-gradient(farthest-side,#ffffff 94%,#0000) top/6px 6px no-repeat,
+                conic-gradient(#0000 30%,#ffffff);
+    mask: radial-gradient(farthest-side,#0000 calc(100% - 6px),#000 0);
+    animation: rotate 1s infinite linear;
+    margin: 0 auto;
+  }
+
+  @keyframes rotate {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+
+  .animate-text-gradient {
+    background-size: 200% auto;
+    animation: text-gradient 4s linear infinite;
+  }
+
+  @keyframes text-gradient {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+  }
+</style>
+
+<!-- Scripts -->
 <script>
   const form = document.getElementById("brandonForm");
   const chatWindow = document.getElementById("chatWindow");
@@ -393,7 +443,7 @@ cdn.min.js is the minified version — optimized, faster to load.-->
         role === "user"
           ? "bg-blue-600 text-white"
           : "bg-gray-700 text-gray-100"
-      } transition-all duration-300 ease-in-out">
+      } transition-all duration-300 ease-in-out whitespace-pre-line">
         ${text}
       </div>
     `;
@@ -409,16 +459,22 @@ cdn.min.js is the minified version — optimized, faster to load.-->
     addMessage("user", message);
     input.value = "";
 
-    addMessage("bot", "<em>Typing...</em>");
+    const typingDiv = document.createElement("div");
+    typingDiv.className = `w-full flex justify-start`;
+    typingDiv.innerHTML = `<div class="loader"></div>`;
+    chatWindow.appendChild(typingDiv);
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+
     const response = await sendToGroq(message);
 
-    chatWindow.lastChild.innerHTML = `
-      <div class="px-4 py-3 rounded-xl max-w-[80%] shadow bg-gray-700 text-gray-100 transition-all duration-300 ease-in-out">
+    typingDiv.innerHTML = `
+      <div class="px-4 py-3 rounded-xl max-w-[80%] shadow bg-gray-700 text-gray-100">
         ${response}
       </div>
     `;
   });
 </script>
+
 
 
 
