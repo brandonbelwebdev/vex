@@ -277,8 +277,51 @@ cdn.min.js is the minified version — optimized, faster to load.-->
       </div>
     </div>
   </div>
+
+
+
+
+<!-- Relocation Slideshow Section -->
+<section class="bg-gray-900 py-20 px-6">
+  <div class="max-w-6xl mx-auto text-center">
+    <h2 class="text-4xl sm:text-5xl font-extrabold text-white mb-6">Want to Work Abroad?</h2>
+    <p class="text-lg sm:text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
+      Your passport isn’t just for travel — it’s your ticket to a career that spans continents. From dynamic financial hubs to fast-growing innovation zones, we help professionals take the leap into high-value roles across the world.
+    </p>
+
+    <!-- Unique-Shaped Slideshow -->
+    <div class="relative w-full max-w-4xl mx-auto overflow-hidden shadow-2xl">
+      <div class="relative h-[400px] w-full clip-modern overflow-hidden">
+        <img src="./images/Shanghai.jpg" alt="Shanghai" class="absolute inset-0 w-full h-full object-cover opacity-0 animate-image1">
+        <img src="./images/Singapore.jpg" alt="Singapore" class="absolute inset-0 w-full h-full object-cover opacity-0 animate-image2">
+        <img src="./images/Dubai.jpg" alt="Dubai" class="absolute inset-0 w-full h-full object-cover opacity-0 animate-image3">
+        <img src="./images/HongKong.jpg" alt="Hong Kong" class="absolute inset-0 w-full h-full object-cover opacity-0 animate-image4">
+        <div class="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-black/30 pointer-events-none"></div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- Slideshow Animations -->
+<style>
+  @keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    10%, 25% { opacity: 1; }
+    30%, 100% { opacity: 0; }
+  }
+
+  .animate-image1 { animation: fadeInOut 20s infinite; animation-delay: 0s; }
+  .animate-image2 { animation: fadeInOut 20s infinite; animation-delay: 5s; }
+  .animate-image3 { animation: fadeInOut 20s infinite; animation-delay: 10s; }
+  .animate-image4 { animation: fadeInOut 20s infinite; animation-delay: 15s; }
+
+  /* Modern Clip Style */
+  .clip-modern {
+    clip-path: polygon(0 10%, 5% 0, 95% 0, 100% 10%, 100% 90%, 95% 100%, 5% 100%, 0 90%);
+    border: 2px solid rgba(0, 255, 255, 0.15);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+  }
+</style>
 
 
 
