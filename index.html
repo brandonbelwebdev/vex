@@ -399,7 +399,7 @@ cdn.min.js is the minified version — optimized, faster to load.-->
 
   <div class="text-xl font-semibold text-center h-10">
     <span id="typingWord" class="bg-gradient-to-r from-pink-500 via-blue-400 to-purple-500 bg-clip-text text-transparent"></span>
-    <span class="text-white">|</span>
+    <span class="text-white"></span>
   </div>
 </div>
 
@@ -410,28 +410,48 @@ cdn.min.js is the minified version — optimized, faster to load.-->
   let wordIndex = 0;
   let charIndex = 0;
   let typingForward = true;
+  let lastFrame = 0;
+  let delay = 45; // faster typing (was 100)
+  let pauseEndTime = 0;
 
-  function typeWord() {
+  function typeWord(timestamp) {
+    if (timestamp - lastFrame < delay) {
+      requestAnimationFrame(typeWord);
+      return;
+    }
+    lastFrame = timestamp;
+
+    if (pauseEndTime > 0 && timestamp < pauseEndTime) {
+      requestAnimationFrame(typeWord);
+      return;
+    }
+
     const currentWord = words[wordIndex];
+
     if (typingForward) {
-      typingEl.textContent = currentWord.slice(0, ++charIndex);
+      charIndex++;
+      typingEl.textContent = currentWord.slice(0, charIndex);
+
       if (charIndex === currentWord.length) {
         typingForward = false;
-        setTimeout(typeWord, 1200); // pause at full word
-        return;
+        pauseEndTime = timestamp + 1800; // longer hold (was 1200)
       }
     } else {
-      typingEl.textContent = currentWord.slice(0, --charIndex);
+      charIndex--;
+      typingEl.textContent = currentWord.slice(0, charIndex);
+
       if (charIndex === 0) {
         typingForward = true;
         wordIndex = (wordIndex + 1) % words.length;
       }
     }
-    setTimeout(typeWord, typingForward ? 50 : 30);
+
+    requestAnimationFrame(typeWord);
   }
 
-  typeWord();
+  requestAnimationFrame(typeWord);
 </script>
+
 
 <!-- Chat Window -->
 <!-- Chat Window -->
