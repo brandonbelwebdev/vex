@@ -363,35 +363,12 @@ cdn.min.js is the minified version — optimized, faster to load.-->
 <section class="relative w-full min-h-screen overflow-hidden flex flex-col justify-center items-center">
 
   <!-- 🎥 Background Video -->
-  <video
-  autoplay
-  muted
-  loop
-  playsinline
-  preload="auto"
-  poster="./images/fallback.jpg"
-  class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none z-0"
-  style="filter: brightness(1) contrast(1.2); animation: slowDown 60s linear infinite;"
->
-  <!-- MP4 Source -->
-  <source src="./images/new.mp4" type="video/mp4">
-
-  <!-- WebM fallback for older browsers -->
-  <source src="./images/new.webm" type="video/webm">
-
-  <!-- Ogg fallback -->
-  <source src="./images/new.ogv" type="video/ogg">
-
-  <!-- Fallback message -->
-  Your browser does not support the video tag. Please update your browser.
-
-</video>
-
-<!-- Fallback for non-JS users -->
-<noscript>
-  <div style="background: url('./images/fallback.jpg') center center / cover no-repeat; height: 100%; width: 100%; position: absolute; inset: 0; z-index: 0; opacity: 0.2;"></div>
-</noscript>
-
+  <video autoplay muted loop playsinline
+         class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none z-0"
+         style="filter: brightness(1) contrast(1.2); animation: slowDown 60s linear infinite;">
+    <source src="./images/new.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
   <!-- ⚡ Foreground Content -->
   <div class="relative z-10 w-full max-w-xl px-6 sm:px-8 pt-8 pb-6 flex flex-col gap-4">
