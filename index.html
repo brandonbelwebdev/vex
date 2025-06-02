@@ -96,9 +96,10 @@ cdn.min.js is the minified version — optimized, faster to load.-->
       </div>
 
       <!-- Logo -->
-      <img src="./images/bel.png" alt="VirtuExec Logo" class="h-16 w-auto rounded-lg">
+     
+ <img src="./images/bel.png" alt="VirtuExec Logo" class="h-16 w-auto rounded-lg">
       <span class="text-4xl font-extrabold text-white neon-text"></span>
-    </div>
+    </div>  
 
     <!-- Right Side: Nav Items (Desktop Only) -->
     <nav class="hidden md:flex items-center gap-6">
@@ -346,71 +347,157 @@ cdn.min.js is the minified version — optimized, faster to load.-->
 
 
 </section>
+<section class="relative w-full min-h-screen overflow-hidden flex flex-col justify-center items-center">
 
+  <!-- 🎥 Background Video -->
+  <video autoplay muted loop playsinline
+         class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none z-0"
+         style="filter: brightness(0.5) contrast(1.2); animation: slowDown 60s linear infinite;">
+    <source src="./images/backdrop.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-<!-- Main Container -->
-<!-- Header -->
-<div class="flex flex-col items-center gap-4 mb-10 px-4 sm:px-6">
-  <div class="flex items-center justify-center gap-4">
-    <h1 class="text-4xl font-extrabold text-white tracking-tight">Jenny</h1>
+  <!-- ⚡ Foreground Content -->
+  <div class="relative z-10 w-full max-w-xl px-6 sm:px-8 pt-8 pb-6 flex flex-col gap-4">
+
+    <!-- Header & Subtext -->
+   <div class="flex flex-col items-center text-center mb-4">
+  <div class="flex items-center gap-5 justify-center mb-4">
+    <h1 class="text-6xl font-extrabold text-white tracking-tight">Recruiter</h1>
     <img src="./images/AI.png" alt="AI Icon" class="w-20 h-20 rounded-full shadow-xl" />
   </div>
-  <p class="text-center text-lg text-gray-300 max-w-xl leading-relaxed">
-    Meet your AI assistant. Ask anything about 
-    <span class="font-semibold bg-gradient-to-r from-pink-500 via-blue-400 to-purple-500 bg-clip-text text-transparent hover:brightness-125 transition duration-300">visa requirements</span>, 
-    <span class="font-semibold bg-gradient-to-r from-pink-500 via-blue-400 to-purple-500 bg-clip-text text-transparent hover:brightness-125 transition duration-300">job roles</span>, 
-    or 
-    <span class="font-semibold bg-gradient-to-r from-pink-500 via-blue-400 to-purple-500 bg-clip-text text-transparent hover:brightness-125 transition duration-300">relocation</span> — it’s built to help you make smarter global moves.
+  <p class="text-xl text-gray-300 max-w-2xl leading-8">
+    Meet your recruiter AI. Ask anything about
+    <span class="font-semibold bg-gradient-to-r from-pink-500 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+      visa requirements, 
+    </span>
+    <span class="font-semibold bg-gradient-to-r from-yellow-400 via-green-300 to-teal-400 bg-clip-text text-transparent">
+      job roles
+    </span>, or
+    <span class="font-semibold bg-gradient-to-r from-fuchsia-500 via-indigo-400 to-sky-500 bg-clip-text text-transparent">
+      relocation
+    </span> — it's built to help you make smarter global moves.
   </p>
 </div>
 
 
-<!-- Chat Window -->
-<!-- Outer Padding Wrapper -->
-<div class="px-4 sm:px-6">
-
-  <!-- Chat Window -->
-  <div id="chatWindow"
-       class="w-full max-w-lg mt-6 space-y-3 max-h-[70vh] overflow-y-auto
-              bg-[#1a2332] p-6 rounded-xl shadow-inner text-base md:text-lg mx-auto">
-  </div>
-
-  <!-- Search/Form Container -->
-  <form id="brandonForm" class="w-full max-w-lg mt-4 mx-auto">
-    <div class="flex items-center gap-3 bg-[#1a2332] rounded-2xl shadow-xl p-4">
-
-      <!-- Input Field -->
-      <input
-        id="userInput"
-        name="text"
-        type="text"
-        placeholder="Ask me anything..."
-        class="flex-1 bg-transparent border-none outline-none text-white placeholder-gray-400 text-base md:text-lg"
-      />
-
-      <!-- Send Button -->
-      <button type="submit" id="sendBtn" class="hover:scale-110 transition text-white">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
-             viewBox="0 0 24 24" fill="none" stroke="currentColor"
-             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="22" y1="2" x2="11" y2="13"></line>
-          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-        </svg>
-      </button>
-
+    <!-- Chat Window -->
+    <div id="chatWindow"
+         class="w-full max-w-xl mx-auto max-h-[55vh] overflow-y-auto bg-[#1a2332] p-4 rounded-xl shadow-inner text-base md:text-lg">
     </div>
-  </form>
 
-  <!-- Groq Branding -->
-  <div class="mt-4 flex justify-center items-center text-sm text-gray-400 space-x-1">
-    <span>Powered by</span>
-    <a href="https://groq.com" target="_blank" rel="noopener noreferrer"
-       class="bg-white rounded px-1 py-0.5">
-      <img src="images/grok.png" alt="Groq Logo"
-           class="h-5 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300">
-    </a>
+    <!-- Search/Form Container -->
+    <form id="brandonForm" class="w-full max-w-xl mx-auto mt-2 relative">
+      <div class="flex items-center gap-2 bg-[#1a2332] rounded-xl shadow-xl px-4 py-3">
+        <!-- Input Field -->
+        <input
+          id="userInput"
+          name="text"
+          type="text"
+          placeholder="Ask me anything..."
+          class="flex-1 bg-transparent border-none outline-none text-white placeholder-gray-400 text-base"
+        />
+        <!-- Send Button -->
+        <button type="submit" id="sendBtn" class="p-2 hover:scale-110 transition text-white bg-[#2b2f40] rounded-full">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+               viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+    </form>
+
+    <!-- Groq Branding -->
+    <div class="pt-2 flex justify-center items-center text-sm text-gray-400 space-x-1">
+      <span>Powered by</span>
+      <a href="https://groq.com" target="_blank" rel="noopener noreferrer"
+         class="bg-white rounded px-1 py-0.5">
+        <img src="images/grok.png" alt="Groq Logo"
+             class="h-5 w-auto opacity-90 hover:opacity-100 transition-opacity duration-300">
+      </a>
+    </div>
+
   </div>
-</div>
+</section>
+
+<!-- Optional: Background Zoom Effect -->
+<style>
+@keyframes slowDown {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+  100% { transform: scale(1); }
+}
+</style>
+
+
+    <!-- Groq Branding -->
+    
+</section>
+
+<!-- Slow zoom effect for background -->
+<style>
+@keyframes slowDown {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+  100% { transform: scale(1); }
+}
+</style>
+
+
+<!-- Zoom effect for background -->
+<style>
+@keyframes slowDown {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+  100% { transform: scale(1); }
+}
+</style>
+
+<!-- Zoom effect for background -->
+<style>
+@keyframes slowDown {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+  100% { transform: scale(1); }
+}
+</style>
+
+
+<!-- Slow zoom effect for backdrop -->
+<style>
+@keyframes slowDown {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+  100% { transform: scale(1); }
+}
+</style>
+
+
+<!-- Optional: Background video slow zoom -->
+<style>
+@keyframes slowDown {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+  100% { transform: scale(1); }
+}
+</style>
+
+
+
+<!-- 🐢 CSS for Smooth Background Motion -->
+<style>
+@keyframes slowDown {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.01); }
+  100% { transform: scale(1); }
+}
+</style>
+
+
+
+
 
 
 
@@ -518,9 +605,7 @@ cdn.min.js is the minified version — optimized, faster to load.-->
   });
 </script>
 
-
-
-
+</section>
 
 
 
