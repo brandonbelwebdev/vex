@@ -363,12 +363,13 @@ cdn.min.js is the minified version — optimized, faster to load.-->
 <section class="relative w-full min-h-screen overflow-hidden flex flex-col justify-center items-center">
 
   <!-- 🎥 Background Video -->
-  <video autoplay muted loop playsinline
-         class="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none z-0"
-         style="filter: brightness(1) contrast(1.2); animation: slowDown 60s linear infinite;">
-    <source src="./images/new.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <div class="absolute inset-0 w-full h-full pointer-events-none z-0">
+  <img src="./images/new1.png"
+       alt="Background"
+       class="w-full h-full object-cover opacity-20"
+       style="filter: brightness(1) contrast(1.2);" />
+</div>
+
 
   <!-- ⚡ Foreground Content -->
   <div class="relative z-10 w-full max-w-xl px-6 sm:px-8 pt-8 pb-6 flex flex-col gap-4">
