@@ -122,13 +122,16 @@ cdn.min.js is the minified version — optimized, faster to load.-->
       style="display: none;"
     >
       <!-- Sidebar Header -->
-      <div class="flex justify-between items-center mb-6">
-        <h2 class="text-2xl font-bold tracking-tight">
-          <span class="text-cyan-400 font-extrabold drop-shadow-[0_0_12px_rgba(34,211,238,0.7)]">Win</span>
-          <span class="text-white font-light drop-shadow-[0_0_6px_rgba(255,255,255,0.2)] ml-1">Everywhere</span>
-        </h2>
-        <button @click="open = false" class="text-white text-2xl hover:text-red-400">×</button>
-      </div>
+  
+<div class="flex justify-between items-center mb-6">
+  <h2 class="text-2xl font-bold tracking-tight">
+    <span class="font-extrabold">Win</span>
+    <span class="ml-1 font-light">Everywhere</span>
+  </h2>
+  <button @click="open = false" class="text-2xl">×</button>
+</div>
+
+
 
       <!-- Sidebar Navigation -->
 <nav class="space-y-4">
@@ -245,17 +248,27 @@ cdn.min.js is the minified version — optimized, faster to load.-->
 
 
 <!-- Hero Section -->
-<section class="text-center py-32 px-6 bg-gray-800 relative overflow-hidden">
-  <img src="./images/blue.jpeg" alt="Background" class="absolute inset-0 w-full h-full object-cover opacity-30 z-0">
-  <div class="relative z-10">
-    <h1 class="text-6xl font-extrabold text-white mb-4">Recruiting Without Borders</h1>
-    <p class="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
-      If you’ve been feeling stuck — underpaid, overqualified, boxed in — you're not alone.<br><br>
-      The system you’re in isn’t broken. It was built that way.<br><br>
-      We help you step outside it. Real roles. Visa support. A future that makes sense.
+<section class="relative bg-gray-900 text-white py-32 px-6 text-center overflow-hidden">
+  <div class="max-w-5xl mx-auto z-10 relative">
+    <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+      We Send Teachers Abroad. Fast.
+    </h1>
+    <p class="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-10">
+      We place qualified teachers in real schools across Asia — full-time roles, work visas, housing sorted.<br><br>
+      No fluff. No commissions. Just a global career pipeline built for people who want out of the 9-to-nowhere.
     </p>
+
+    <div class="mt-8 flex justify-center gap-4 flex-wrap">
+      <a href="#get-started" class="bg-yellow-400 hover:bg-yellow-300 text-black text-lg font-semibold px-6 py-3 rounded-md shadow-lg transition">
+        Apply to Teach
+      </a>
+      <a href="#how-it-works" class="text-yellow-300 hover:text-yellow-200 text-lg font-semibold px-6 py-3 transition">
+        How It Works
+      </a>
+    </div>
   </div>
 </section>
+
 
 
 
