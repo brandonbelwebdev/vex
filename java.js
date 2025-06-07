@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         sliderTrack.style.transform = `translateX(${offset}%)`;
     }
 
-    // Auto-rotate testimonials every 5 seconds
+    
     setInterval(() => {
         currentIndex = (currentIndex < testimonials.length - 1) ? currentIndex + 1 : 0;
         updateSlider();

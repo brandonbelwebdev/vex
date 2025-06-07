@@ -298,7 +298,6 @@ cdn.min.js is the minified version — optimized, faster to load.-->
 </style>
 
 
-
 <!-- Contact + QR Section -->
 <section class="w-full flex flex-col lg:flex-row justify-center items-center gap-10 px-6 py-20 bg-gray-950 text-center">
   <!-- Contact Form -->
@@ -306,12 +305,13 @@ cdn.min.js is the minified version — optimized, faster to load.-->
     <div class="bg-black bg-opacity-50 p-8 rounded-2xl">
       <h2 class="text-4xl font-bold mb-6 text-white">Work With Brandon</h2>
       <p class="text-gray-300 mb-8">
-        Hiring? Get in touch, i'm always looking to get stuck into dififcult problems!
+        Hiring? Get in touch, I'm always looking to get stuck into difficult problems!
       </p>
 
       <!-- Form -->
-      <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
-        <input type="hidden" name="access_key" value="bfd47137-fa17-4c07-808c-a996c3460394">
+      <form id="secureForm" method="POST" class="space-y-6">
+        <!-- Access Key (obfuscated) -->
+        <input type="hidden" name="access_key" id="access_key" value="">
 
         <!-- Name -->
         <div>
@@ -334,19 +334,54 @@ cdn.min.js is the minified version — optimized, faster to load.-->
             class="w-full bg-gray-800 border border-gray-700 p-4 rounded-lg h-40 focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
         </div>
 
-        <!-- Hidden Botcheck -->
-        <input type="checkbox" name="botcheck" class="hidden">
+        <!-- Hidden Botcheck Field -->
+        <input type="text" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
 
         <!-- Submit Button -->
-        <button type="submit"
+        <button type="submit" id="submitBtn"
           class="w-full bg-blue-600 hover:bg-blue-700 p-4 rounded-lg text-white font-semibold text-xl transition duration-300 transform hover:scale-105 shadow-md">
           Send Message
         </button>
       </form>
-
     </div>
   </div>
 </section>
+
+<!-- 🔒 Security JS -->
+<script>
+  const form = document.getElementById("secureForm");
+  const submitBtn = document.getElementById("submitBtn");
+  const accessKeyInput = document.getElementById("access_key");
+  const formStartTime = Date.now();
+
+  // Obfuscate access key using JS
+  accessKeyInput.value = ['bfd4', '7137', '-fa17', '-4c07', '-808c', '-a996c3460394'].join('');
+  form.action = "https://api.web3forms.com/submit"; // Only set action after JS loads
+
+  form.addEventListener("submit", function(e) {
+    const timeTaken = (Date.now() - formStartTime) / 1000;
+    const botTrap = form.querySelector("input[name='botcheck']").value;
+
+    // Honeypot triggered
+    if (botTrap) {
+      e.preventDefault();
+      alert("Bot detected. Submission blocked.");
+      return;
+    }
+
+    // Too fast = bot
+    if (timeTaken < 5) {
+      e.preventDefault();
+      alert("Whoa there — bots submit faster than humans. Slow down.");
+      return;
+    }
+
+    // Disable button to prevent double submit
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Sending...";
+  });
+</script>
+
 
 
 
