@@ -303,64 +303,46 @@
 </footer>
 
   <!-- Airtable Job Loader -->
-<script>
-  fetch("http://127.0.0.1:5000/api/jobs")
-    .then(res => {
-      console.log("🔄 Fetch status:", res.status);
-      return res.json();
-    })
-    .then(data => {
-      console.log("✅ Data loaded:", data);
+  <script>
+fetch("http://127.0.0.1:5000/api/jobs")
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById("job-listings");
+    container.innerHTML = '';
 
-      const container = document.getElementById("job-listings");
-      if (!container) {
-        console.error("❌ Cannot find #job-listings");
-        return;
-      }
+    data.records.forEach(record => {
+      const fields = record.fields;
+      const title = fields["Job Title"] || "Untitled";
+      const employer = fields["Employer Name"] || "Unknown Employer";
+      const location = fields["Location"] || "Anywhere";
+      const jobType = fields["Job Type"] || "Unspecified";
+      const salary = fields["Salary"] ? `¥${fields["Salary"].toLocaleString()}` : "Salary not listed";
+      const summary = fields["Job Description Summary"] || "No description provided.";
+      const photo = fields["Job Photo"]?.[0]?.thumbnails?.large?.url || "";
 
-      container.innerHTML = ''; // clear loading text
-
-      if (!data.records || data.records.length === 0) {
-        container.innerHTML = '<p class="text-yellow-400 text-center py-10">No jobs available.</p>';
-        return;
-      }
-
-      data.records.forEach(record => {
-        const fields = record.fields || {};
-        const title = fields["Job Title"] || "Untitled";
-        const employer = fields["Employer Name"] || "Unknown Employer";
-        const location = fields["Location"] || "Anywhere";
-        const jobType = fields["Job Type"] || "Unspecified";
-        const salary = fields["Salary"] ? `¥${Number(fields["Salary"]).toLocaleString()}` : "Salary not listed";
-        const summary = fields["Job Description Summary"]?.value || "No description provided.";
-        const photo = fields["Job Photo"]?.[0]?.thumbnails?.large?.url || "";
-
-        const row = document.createElement("div");
-        row.className = "hover:bg-gray-800 transition px-4 py-5 cursor-pointer border-b border-gray-700 rounded-lg";
-        row.innerHTML = `
-          <div class="flex items-start space-x-4">
-            ${photo ? `<img src="${photo}" class="w-20 h-20 object-cover rounded-xl" alt="Job image">` : ''}
-            <div class="flex-grow">
-              <h3 class="text-xl font-bold text-white">${title}</h3>
-              <p class="text-sm text-gray-400">${location} · ${jobType} · ${employer}</p>
-              <p class="text-sm text-green-400 mt-1">${salary}</p>
-              <p class="text-sm text-gray-300 mt-2">${summary}</p>
-            </div>
+      const row = document.createElement("div");
+      row.className = "hover:bg-gray-800 transition px-4 py-5 cursor-pointer border-b border-gray-700";
+      row.innerHTML = `
+        <div class="flex items-start space-x-4">
+          ${photo ? `<img src="${photo}" class="w-20 h-20 object-cover rounded-xl">` : ''}
+          <div class="flex-grow">
+            <h3 class="text-xl font-bold text-white">${title}</h3>
+            <p class="text-sm text-gray-400">${location} · ${jobType} · ${employer}</p>
+            <p class="text-sm text-green-400 mt-1">${salary}</p>
+            <p class="text-sm text-gray-300 mt-2">${summary}</p>
           </div>
-        `;
-        container.appendChild(row);
-      });
-    })
-    .catch(err => {
-      console.error("❌ Fetch error:", err);
-      const container = document.getElementById("job-listings");
-      if (container) {
-        container.innerHTML = `
-          <p class="text-red-500 text-center py-10">Error loading data from backend.</p>
-        `;
-      }
+        </div>
+      `;
+      container.appendChild(row);
     });
-</script>
+  })
+  .catch(err => {
+    console.error("❌ Error fetching data:", err);
+    document.getElementById("job-listings").innerHTML = `
+      <p class="text-red-500 text-center py-10">Error loading data from backend.</p>
+    `;
+  });
+<script>
 
 
 
