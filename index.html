@@ -25,19 +25,21 @@
       }
       .word-rotate span:nth-child(2) { animation-delay: 3s; }
       .word-rotate span:nth-child(3) { animation-delay: 6s; }
-      .close-btn:hover path {
-        stroke: red;
-      }
+      .close-btn:hover path { stroke: red; }
     </style>
   </head>
   <body class="bg-white text-neutral-900 antialiased">
+    <!-- HEADER / NAV -->
     <header class="bg-white py-4 sticky top-0 z-50 shadow-sm border-b">
       <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div class="text-base tracking-wide font-medium logo-font text-neutral-700">Brandon Costello</div>
         <nav class="hidden md:flex space-x-6 text-sm text-neutral-600">
-          <a href="#contact" class="hover:text-black transition">Contact</a>
-          <a href="#language" class="hover:text-black transition">Language Coaching</a>
+          <a id="nav-contact" href="#contact" class="hover:text-black transition">Contact</a>
+          <a id="nav-language" href="#language" class="hover:text-black transition">Language Coaching</a>
         </nav>
+        <!-- Language Toggle -->
+        <button id="lang-toggle" aria-label="切换语言" class="mr-4 text-sm font-medium text-neutral-600 hover:text-black transition hidden md:inline">中文</button>
+        <!-- Mobile Menu Button -->
         <button id="menu-btn" aria-label="Toggle menu" class="md:hidden relative w-8 h-8 focus:outline-none">
           <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 transition-transform duration-200 ease-in-out">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
@@ -47,67 +49,141 @@
           </svg>
         </button>
       </div>
+      <!-- MOBILE MENU -->
       <nav id="mobile-menu" class="fixed top-0 right-0 h-full w-3/4 max-w-xs bg-white transform translate-x-full transition-transform duration-300 ease-in-out shadow-lg z-40 md:hidden flex flex-col p-8 space-y-6 text-lg font-medium">
-        <a href="#contact" class="hover:text-black" onclick="toggleMenu()">Contact</a>
-        <a href="#language" class="hover:text-black" onclick="toggleMenu()">Language Coaching</a>
+        <a id="mobile-contact" href="#contact" class="hover:text-black" onclick="toggleMenu()">Contact</a>
+        <a id="mobile-language" href="#language" class="hover:text-black" onclick="toggleMenu()">Language Coaching</a>
+        <button id="mobile-lang-toggle" onclick="toggleLanguage();toggleMenu();" class="text-left hover:text-black transition">中文 / EN</button>
         <button onclick="toggleMenu()" class="mt-auto self-end text-neutral-600 hover:text-red-600 transition text-xl">Close ✕</button>
       </nav>
     </header>
 
+    <!-- HERO SECTION -->
     <section class="bg-white relative py-24 px-6 overflow-hidden">
       <div class="max-w-7xl mx-auto relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
-          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-neutral-900">
+          <h1 id="hero-title" class="text-4xl md:text-5xl font-extrabold leading-tight text-neutral-900">
             Everything <span class="bg-gradient-to-r from-amber-500 to-yellow-400 bg-clip-text text-transparent">you think you need</span> might be wrong.<br />Leverage, not busyness.
           </h1>
-          <p class="text-neutral-600 mt-6 text-lg max-w-xl">
+          <p id="hero-sub" class="text-neutral-600 mt-6 text-lg max-w-xl">
             I help teams move faster, build sharper, and reduce the noise. If you're building something durable, I want to hear about it.
           </p>
           <div class="mt-8 flex gap-4">
-            <a href="#contact" class="bg-neutral-900 text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-neutral-800 transition">Reach out</a>
-            <a href="/Brandon_Costello_CV.pdf" class="border border-neutral-300 px-6 py-3 rounded-lg text-sm text-neutral-700 hover:border-neutral-600 transition">Download CV</a>
+            <a id="reach-btn" href="#contact" class="bg-neutral-900 text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-neutral-800 transition">Reach out</a>
+            <a id="cv-btn" href="/Brandon_Costello_CV.pdf" class="border border-neutral-300 px-6 py-3 rounded-lg text-sm text-neutral-700 hover:border-neutral-600 transition">Download CV</a>
           </div>
         </div>
         <div class="w-full max-w-sm mx-auto">
-          <img src="./images/sydney.jpg" alt="Mountain peaks" class="object-cover rounded-xl shadow-xl w-full h-auto" />
+          <img src="./images/sydney.jpg" alt="City skyline" class="object-cover rounded-xl shadow-xl w-full h-auto" />
         </div>
       </div>
     </section>
 
+    <!-- CONTACT SECTION -->
     <section id="contact" class="py-24 bg-white">
       <div class="max-w-xl mx-auto px-6 text-center">
-        <h2 class="text-2xl font-semibold text-neutral-900 mb-4 tracking-tight">Get In Touch</h2>
-        <p class="text-neutral-600 mb-8">If there's alignment, you'll hear back. No noise.</p>
+        <h2 id="contact-header" class="text-2xl font-semibold text-neutral-900 mb-4 tracking-tight">Get In Touch</h2>
+        <p id="contact-desc" class="text-neutral-600 mb-8">If there's alignment, you'll hear back. No noise.</p>
         <form method="POST" action="https://api.web3forms.com/submit" class="space-y-6">
           <input type="hidden" name="access_key" value="bfd47137-fa17-4c07-808c-a996c3460394" />
-          <input type="text" name="name" required placeholder="Your Name" class="w-full bg-gray-100 border border-gray-300 rounded-xl px-4 py-3 text-neutral-900 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-black" />
-          <input type="email" name="email" required placeholder="Your Email" class="w-full bg-gray-100 border border-gray-300 rounded-xl px-4 py-3 text-neutral-900 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-black" />
-          <textarea name="message" required placeholder="Your Message" class="w-full bg-gray-100 border border-gray-300 rounded-xl px-4 py-3 h-32 text-neutral-900 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-black"></textarea>
-          <button type="submit" class="w-full bg-neutral-900 text-white font-semibold py-3 rounded-xl hover:bg-neutral-800 transition">Send</button>
+          <input id="name-ph" type="text" name="name" required placeholder="Your Name" class="w-full bg-gray-100 border border-gray-300 rounded-xl px-4 py-3 text-neutral-900 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-black" />
+          <input id="email-ph" type="email" name="email" required placeholder="Your Email" class="w-full bg-gray-100 border border-gray-300 rounded-xl px-4 py-3 text-neutral-900 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-black" />
+          <textarea id="msg-ph" name="message" required placeholder="Your Message" class="w-full bg-gray-100 border border-gray-300 rounded-xl px-4 py-3 h-32 text-neutral-900 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-black"></textarea>
+          <button id="send-btn" type="submit" class="w-full bg-neutral-900 text-white font-semibold py-3 rounded-xl hover:bg-neutral-800 transition">Send</button>
         </form>
       </div>
     </section>
 
     <footer class="text-sm text-neutral-400 text-center py-6 bg-white">
       &copy; 2025 Brandon Costello<br />
-      <span class="text-xs text-neutral-400">Available for consulting & conversation coaching</span>
+      <span id="footer-sub" class="text-xs text-neutral-400">Available for consulting & conversation coaching</span>
     </footer>
 
+    <!-- SCRIPTS -->
     <script>
+      // MOBILE MENU TOGGLE
       const menuBtn = document.getElementById('menu-btn');
       const mobileMenu = document.getElementById('mobile-menu');
       const openIcon = document.getElementById('icon-open');
       const closeIcon = document.getElementById('icon-close');
 
       function toggleMenu() {
-        const isOpen = mobileMenu.classList.contains('translate-x-0');
         mobileMenu.classList.toggle('translate-x-0');
         mobileMenu.classList.toggle('translate-x-full');
         openIcon.classList.toggle('hidden');
         closeIcon.classList.toggle('hidden');
       }
-
       menuBtn.addEventListener('click', toggleMenu);
+
+      // LANGUAGE TOGGLE
+      const langToggleDesktop = document.getElementById('lang-toggle');
+      const langToggleMobile = document.getElementById('mobile-lang-toggle');
+
+      const t = {
+        en: {
+          navContact: 'Contact',
+          navLanguage: 'Language Coaching',
+          heroTitle: `Everything <span class="bg-gradient-to-r from-amber-500 to-yellow-400 bg-clip-text text-transparent">you think you need</span> might be wrong.<br />Leverage, not busyness.`,
+          heroSub: "I help teams move faster, build sharper, and reduce the noise. If you're building something durable, I want to hear about it.",
+          reach: 'Reach out',
+          download: 'Download CV',
+          contactHeader: 'Get In Touch',
+          contactDesc: "If there's alignment, you'll hear back. No noise.",
+          namePh: 'Your Name',
+          emailPh: 'Your Email',
+          msgPh: 'Your Message',
+          send: 'Send',
+          footer: 'Available for consulting & conversation coaching',
+          toggleLabel: '中文'
+        },
+        zh: {
+          navContact: '联系',
+          navLanguage: '语言辅导',
+          heroTitle: `你认为 <span class="bg-gradient-to-r from-amber-500 to-yellow-400 bg-clip-text text-transparent">自己需要的一切</span> 也许都是错的。<br />杠杆，而不是忙碌。`,
+          heroSub: '我帮助团队更快行动、更精准构建、并减少噪音。如果你在打造经得起考验的事业，我想与你交谈。',
+          reach: '联系我',
+          download: '下载简历',
+          contactHeader: '联系方式',
+          contactDesc: '如果目标一致，我会回复。拒绝噪音。',
+          namePh: '你的名字',
+          emailPh: '你的邮箱',
+          msgPh: '你的信息',
+          send: '发送',
+          footer: '提供咨询与口语辅导服务',
+          toggleLabel: 'EN'
+        }
+      };
+
+      let currentLang = 'en';
+
+      function applyLang(lang) {
+        const d = t[lang];
+        document.getElementById('nav-contact').textContent = d.navContact;
+        document.getElementById('mobile-contact').textContent = d.navContact;
+        document.getElementById('nav-language').textContent = d.navLanguage;
+        document.getElementById('mobile-language').textContent = d.navLanguage;
+        document.getElementById('hero-title').innerHTML = d.heroTitle;
+        document.getElementById('hero-sub').textContent = d.heroSub;
+        document.getElementById('reach-btn').textContent = d.reach;
+        document.getElementById('cv-btn').textContent = d.download;
+        document.getElementById('contact-header').textContent = d.contactHeader;
+        document.getElementById('contact-desc').textContent = d.contactDesc;
+        document.getElementById('name-ph').placeholder = d.namePh;
+        document.getElementById('email-ph').placeholder = d.emailPh;
+        document.getElementById('msg-ph').placeholder = d.msgPh;
+        document.getElementById('send-btn').textContent = d.send;
+        document.getElementById('footer-sub').textContent = d.footer;
+        langToggleDesktop.textContent = d.toggleLabel;
+        langToggleMobile.textContent = d.toggleLabel + ' / ' + (lang === 'en' ? 'EN' : '中文');
+      }
+
+      function toggleLanguage() {
+        currentLang = currentLang === 'en' ? 'zh' : 'en';
+        applyLang(currentLang);
+      }
+
+      langToggleDesktop.addEventListener('click', toggleLanguage);
+      langToggleMobile.addEventListener('click', toggleLanguage);
     </script>
   </body>
 </html>
